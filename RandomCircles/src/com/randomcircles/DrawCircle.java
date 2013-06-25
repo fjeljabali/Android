@@ -9,18 +9,24 @@ import android.view.View;
 
 public class DrawCircle extends View 
 {
+/*********************************rand()*********************************/
+	public static int rand(int a, int b)
+	{
+	   return((int)((b-a+1)*Math.random())+a);
+	}
+	
     Paint paint = new Paint();
-
+/******************************DrawCircle()******************************/
     public DrawCircle(Context context, AttributeSet attrs) 
     {
        super(context, attrs);
        paint.setColor(Color.YELLOW);
     }
-
+/******************************onDraw()******************************/
     @Override
     public void onDraw(Canvas canvas) 
     {
-       canvas.drawCircle(175, 275, 50, paint);       
+       canvas.drawCircle(rand(30,400), rand(30,400), 20, paint);       
     }
 
 }
