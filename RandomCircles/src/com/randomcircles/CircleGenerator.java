@@ -28,8 +28,6 @@ public class CircleGenerator extends Activity
 	
    public void pushmebutton(View v)
    {
-      drawcircle = new DrawCircle(this, null);
-	  drawcircle.invalidate();
       setContentView(R.layout.activity_circle_generator);
    }
 	

@@ -1,8 +1,8 @@
 package com.randomcircles;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -26,7 +26,7 @@ public class DrawCircle extends View
    @Override
    public void onDraw(Canvas canvas) 
    {
-      canvas.drawCircle(rand(30,500), rand(30,750), 25, paint); 
+      canvas.drawCircle(rand(30,600), rand(30,750), 25, paint); 
    }
 
 }
