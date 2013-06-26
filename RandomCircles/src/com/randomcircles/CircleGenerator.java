@@ -15,7 +15,6 @@ public class CircleGenerator extends Activity
 	protected void onCreate(Bundle b) 
 	{
 		super.onCreate(b);
-		drawcircle = new DrawCircle(this, null);
 		setContentView(R.layout.activity_circle_generator);
 	}
 
@@ -27,13 +26,12 @@ public class CircleGenerator extends Activity
 		return true;
 	}
 	
-	//public void pushmebutton(View v)
-	//{
-		//
-	    //drawcircle = new DrawCircle(this);
-		//setContentView(R.layout.activity_circle_generator);
-
-	//}
+   public void pushmebutton(View v)
+   {
+      drawcircle = new DrawCircle(this, null);
+	  drawcircle.invalidate();
+      setContentView(R.layout.activity_circle_generator);
+   }
 	
 
 }
