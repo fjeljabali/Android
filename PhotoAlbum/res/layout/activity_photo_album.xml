@@ -10,78 +10,34 @@
     tools:context=".PhotoAlbum" >
 
     <ImageView
-        android:id="@+id/welcome"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/images"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_below="@+id/prevbutton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
-        android:contentDescription="@string/desc"
-        android:src="@drawable/welcome" />
-    
-    <ImageView
-        android:id="@+id/pic1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/desc" />
-    <ImageView
-        android:id="@+id/pic2"
-        android:layout_width="200dp"
-        android:layout_height="200dp" 
+        android:layout_marginTop="20dp" 
+        android:src="@drawable/pic1"
         android:contentDescription="@string/desc"/>
-    <ImageView
-        android:id="@+id/pic3"
-        android:layout_width="200dp"
-        android:layout_height="200dp" 
-        android:contentDescription="@string/desc"/>
-    <ImageView
-        android:id="@+id/pic4"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/desc" />
-    <ImageView
-        android:id="@+id/pic5"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/desc" />
-    <ImageView
-        android:id="@+id/pic6"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/desc" />
-    <ImageView
-        android:id="@+id/pic7"
-        android:layout_width="200dp"
-        android:layout_height="200dp" 
-        android:contentDescription="@string/desc"/>
-        
-    <Button
-        android:id="@+id/prevButton"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="18dp"
-        android:background="@color/blue"
-        android:onClick="prevButton"
-        android:text="@string/previous"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/nextButton"
+    <ImageButton
+        android:id="@+id/prevbutton"
         android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/prevButton"
-        android:layout_alignBottom="@+id/prevButton"
-        android:layout_alignRight="@+id/welcome"
-        android:background="@color/blue"
-        android:onClick="nextButton"
-        android:text="@string/next"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/images"
+        android:layout_alignTop="@+id/nextbutton"
+        android:background="@color/seablue"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/previcon" />
+
+    <ImageButton
+        android:id="@+id/nextbutton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/images"
+        android:background="@color/seablue"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/nexticon" />
 
 </RelativeLayout>
