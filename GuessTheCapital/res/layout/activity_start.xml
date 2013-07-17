@@ -27,7 +27,6 @@
     android:layout_toRightOf="@+id/entername"
     android:ems="10"
     android:inputType="textPersonName" >
-
     <requestFocus />
     </EditText>
 
