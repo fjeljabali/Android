@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.guessthecapital.GameActivity"
+            android:label="@string/title_activity_game"
+            android:parentActivityName="com.guessthecapital.StartActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.guessthecapital.StartActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@
     <string name="logo">Logo</string>
     <string name="entername">Enter Name:</string>
     <string name="desc">Desc</string>
-    
-    
+    <string name="title_activity_game">Game</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
