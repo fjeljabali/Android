@@ -13,9 +13,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Fragment fragment = new HelloWorldFragment();
+        Fragment fragment = new ViewPhotoFragment();
         getFragmentManager().beginTransaction()
-                            .replace(R.id.fragmentLayoutContainer, fragment, HelloWorldFragment.TAG)
+                            .replace(R.id.fragmentLayoutContainer, fragment, ViewPhotoFragment.TAG)
                             .commit();
     }
 
