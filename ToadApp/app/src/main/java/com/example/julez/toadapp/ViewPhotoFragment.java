@@ -45,6 +45,9 @@ public class ViewPhotoFragment extends Fragment {
                 counter = Math.abs(counter % pics.length);
                 imageView.setImageResource(pics[counter]);
                 playToadSound();
+                if (counter==0){
+                    counter=pics.length;
+                }
             }
 
             private void playToadSound(){
