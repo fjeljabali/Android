@@ -18,6 +18,8 @@ import android.widget.ListView;
  */
 public class Fragment1 extends Fragment
 {
+    public static final String TAG = Fragment1.class.getSimpleName();
+
     @Override
     public View onCreateView(LayoutInflater li,ViewGroup vg, Bundle b)
     {
