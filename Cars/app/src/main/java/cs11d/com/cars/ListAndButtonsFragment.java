@@ -12,33 +12,57 @@ import android.widget.ListView;
 /**
  * Created by Julez on 1/27/15.
  */
-public class ListAndButtonsFragment extends Fragment {
+public class ListAndButtonsFragment extends Fragment
+{
     public static final String TAG = ListAndButtonsFragment.class.getSimpleName();
-    //public static final String TAG = "ListAndButtonsFragment";
+    // or public static final String TAG = "ListAndButtonsFragment";
+    final Car cars[] = {new Car("Fiat500", "$16,645", "101 to 160 HP"), new Car("Mini Cooper","$21,700", "121 to 208 HP"),
+                       new Car("Toyota Prius", "$19,080", "134 HP"), new Car("Smart", "$12,490", "70 HP"),
+                       new Car("Volkswagen Beetle","$20,195", "150 to 210 HP")};
+
 
     @Override
     public View onCreateView(LayoutInflater li, ViewGroup vg, Bundle b) {
         Context context = getActivity().getApplicationContext();
         View view = li.inflate(R.layout.list_and_buttons_fragment, vg, false);
-        final Car cars[] = {new Car("Fiat500", "$40"), new Car("Mini Cooper",""), new Car("Toyota Prius", "$10")};
         ListView listView = (ListView) view.findViewById(R.id.CarListView);
         final CarAdapter carAdapter = new CarAdapter(ListAndButtonsFragment.this, cars);
         listView.setAdapter(carAdapter);
 
         Button price = (Button) view.findViewById(R.id.Price);
-        price.setOnClickListener(new View.OnClickListener() {
+        price.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Car car = carAdapter.getSelectedCar();
-                onSelectedCar(car);
+                onSelectedCarPrice(car);
             }
+        });
+
+        Button horsepower = (Button) view.findViewById(R.id.HorsePower);
+        horsepower.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View v)
+            {
+                Car car = carAdapter.getSelectedCar();
+                onSelectedCarHorsePower(car);
+            }
+
         });
 
         return view;
     }
 
-    public void onSelectedCar(Car car) {
+    public void onSelectedCarPrice(Car car)
+    {
         ((MainActivity)getActivity()).showPriceFragment(car);
+    }
+
+    public void onSelectedCarHorsePower(Car car)
+    {
+        ((MainActivity)getActivity()).showHorsePowerFragment(car);
     }
 
 

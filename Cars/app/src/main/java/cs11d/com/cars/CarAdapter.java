@@ -19,7 +19,8 @@ public class CarAdapter implements ListAdapter
     private Car[] array;
     private Car selectedCar = null;
 
-    public CarAdapter (ListAndButtonsFragment fragment, Car[] array) {
+    public CarAdapter (ListAndButtonsFragment fragment, Car[] array)
+    {
         super();
         this.fragment = fragment;
         this.array = array;
@@ -52,7 +53,8 @@ public class CarAdapter implements ListAdapter
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent)
+    {
         LayoutInflater inflater = (LayoutInflater) fragment.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.car_adapter_item, parent, false);
         //ArrayAdapter<String> ar = new ArrayAdapter<String>(c, android.R.layout.simple_list_item_1, cars);

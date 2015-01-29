@@ -1,16 +1,41 @@
+//Julian Eljabali
+//Advanced Android
+//Assignment #1
+//January 28th 2015
+
+
 package cs11d.com.cars;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity
+{
+    public void showPriceFragment(Car car)
+    {
+        PriceFragment priceFragment = PriceFragment.newInstance(car);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragmentLayoutContainer, priceFragment, PriceFragment.TAG)
+                .addToBackStack(PriceFragment.TAG)
+                .commit();
+    }
+
+    public void showHorsePowerFragment(Car car)
+    {
+        HorsePowerFragment horsePowerFragment = HorsePowerFragment.newInstance(car);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragmentLayoutContainer, horsePowerFragment, PriceFragment.TAG)
+                .addToBackStack(PriceFragment.TAG)
+                .commit();
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListAndButtonsFragment listAndButtonsFragment = new ListAndButtonsFragment();
@@ -22,7 +47,8 @@ public class MainActivity extends ActionBarActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -43,11 +69,4 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showPriceFragment(Car car) {
-        PriceFragment priceFragment = PriceFragment.newInstance(car);
-        getFragmentManager().beginTransaction()
-                .replace(R.id.fragmentLayoutContainer, priceFragment, PriceFragment.TAG)
-                .addToBackStack(PriceFragment.TAG)
-                .commit();
-    }
 }
