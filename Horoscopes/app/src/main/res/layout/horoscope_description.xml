@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#EFE90B">
+
+    <TextView
+        android:id="@+id/horoscope_name"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:drawSelectorOnTop="false"
+        android:textColor="#7411F7"
+        android:textSize="45dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/horoscope_dates"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:drawSelectorOnTop="false"
+        android:textColor="#7411F7"
+        android:textStyle="italic"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/horoscope_description"
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:drawSelectorOnTop="false"
+        android:layout_weight="0.46"
+        android:textColor="#7411F7"
+        android:textSize="15dp"/>
+
+</LinearLayout>
