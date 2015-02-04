@@ -7,16 +7,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity
+{
+    public void showHoroscopeDescription (Horoscope horoscope)
+    {
+        HoroscopeDescription horoscopeDescription = HoroscopeDescription.newInstance(horoscope);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragmentLayoutContainer, horoscopeDescription, HoroscopeDescription.TAG)
+                .addToBackStack(HoroscopeDescription.TAG)
+                .commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Fragment fragment = new Fragment1();
+        Fragment fragment = new HoroscopeList();
         getFragmentManager().beginTransaction()
-                .replace(R.id.fragmentLayoutContainer, fragment, Fragment1.TAG)
+                .replace(R.id.fragmentLayoutContainer, fragment, HoroscopeList.TAG)
                 .commit();
     }
 
