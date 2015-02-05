@@ -47,7 +47,7 @@ public class ListAndButtonsFragment extends Fragment
             public void onClick (View v)
             {
                 Car car = carAdapter.getSelectedCar();
-                onSelectedCarHorsePower(car);
+
             }
 
         });
