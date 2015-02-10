@@ -29,7 +29,7 @@ public class MainFragment extends Fragment implements TextToSpeech.OnInitListene
     {
         View view = li.inflate(R.layout.main_fragment, vg,false);
         textToSpeech = new TextToSpeech(getActivity(), this);
-        button = (Button)view.findViewById(R.id.button);
+        button = (Button)view.findViewById(R.id.angry_btn);
         editText = (EditText)view.findViewById(R.id.editText);
 
         button.setOnClickListener(new View.OnClickListener()

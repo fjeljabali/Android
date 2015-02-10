@@ -10,7 +10,8 @@
         android:id="@id/horoscope_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:drawSelectorOnTop="false"></ListView>
+        android:drawSelectorOnTop="false"
+        android:padding="3dp"></ListView>
 
 
 </LinearLayout>
