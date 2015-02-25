@@ -1,4 +1,4 @@
-package cs11d.com.drawingboard;
+ package cs11d.com.drawingboard;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -18,11 +18,19 @@ import android.view.ViewGroup;
  */
 public class BoardFragment extends Fragment
 {
+    public static final String TAG = BoardFragment.class.getSimpleName();
+
+    Draw drawingCanvas;
 
     @Override
     public View onCreateView(LayoutInflater li, ViewGroup vg, Bundle b)
     {
-        return new Draw(getActivity());
+        drawingCanvas = new Draw(getActivity());
+        return drawingCanvas;
+    }
+
+    public void changeColor(int color) {
+        drawingCanvas.colorChanged(color);
     }
 
 }

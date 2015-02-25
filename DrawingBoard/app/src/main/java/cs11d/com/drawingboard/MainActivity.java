@@ -1,13 +1,25 @@
+/* Julian Eljabali */
+/* Advanced Android */
+/* Assigment # 3 */
+/* February 25th 2015 */
+
+/***************************************
+ This app acts like a drawing board which
+ allows you to draw by touching the screen.
+ ***************************************/
+
 package cs11d.com.drawingboard;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity
 {
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,5 +51,14 @@ public class MainActivity extends ActionBarActivity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void changeColor(int color) {
+        BoardFragment boardFragment = (BoardFragment) getFragmentManager().findFragmentById(R.id.boardfragment);
+        if (boardFragment != null) {
+            boardFragment.changeColor(color);
+        } else {
+            Log.e(TAG, "can't find " + BoardFragment.TAG);
+        }
     }
 }
