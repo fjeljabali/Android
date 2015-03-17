@@ -16,9 +16,6 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Julez on 2/20/15.
- */
 public class Draw extends View
 {
     static Paint paint = new Paint();
@@ -30,18 +27,19 @@ public class Draw extends View
     {
         super(context);
 
-        paint.setAntiAlias(true); //antiAlias makes sharp pictures and res
+        paint.setAntiAlias(true);
         paint.setStrokeWidth(16f);
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND); //rounds edges of lines
+        paint.setStrokeJoin(Paint.Join.ROUND);
 
 
     }
     @Override
     public void onDraw(Canvas canvas)
     {
-        for (PathColor pathColor : pathColorList) {
+        for (PathColor pathColor : pathColorList)
+        {
             canvas.drawPath(pathColor.path, pathColor.paint);
         }
         canvas.drawARGB(100,255,228,225);

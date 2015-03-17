@@ -53,11 +53,15 @@ public class MainActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeColor(int color) {
+    public void changeColor(int color)
+    {
         BoardFragment boardFragment = (BoardFragment) getFragmentManager().findFragmentById(R.id.boardfragment);
-        if (boardFragment != null) {
+        if (boardFragment != null)
+        {
             boardFragment.changeColor(color);
-        } else {
+        }
+        else
+        {
             Log.e(TAG, "can't find " + BoardFragment.TAG);
         }
     }

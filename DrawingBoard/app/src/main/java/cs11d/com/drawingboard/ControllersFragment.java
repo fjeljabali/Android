@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-/**
- * Created by Julez on 2/17/15.
- */
 public class ControllersFragment extends Fragment
 {
     @Override
@@ -35,7 +32,6 @@ public class ControllersFragment extends Fragment
         });
 
         bluebutton.setOnClickListener(new View.OnClickListener()
-
         {
             public void onClick(View v)
             {

@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:text="New ToggleButton"
         android:layout_gravity="center_horizontal"
+        android:background="#ff39f0f9"
         android:layout_above="@+id/seek_bar"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
-        android:background="#ff39f0f9" />
+        android:layout_marginBottom="62dp" />
 
     <SeekBar
         android:id="@+id/seek_bar"
@@ -38,13 +38,11 @@
         android:clickable="true"
         android:max="500"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_alignParentStart="true" />
 
-        />
 
     <TextView
-        android:id="@+id/maximum_text"
+        android:id="@+id/speed_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toggle_button"
