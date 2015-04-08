@@ -1,3 +1,14 @@
+/* Julian Eljabali */
+/* April 8th 2015 */
+/* HW #6 */
+
+/**********************************
+ This app allows you to search any
+ of the states in America using
+ regular expressions. (No service)
+ **********************************/
+
+
 package cs11d.com.statetheobvious;
 
 import android.app.Fragment;
@@ -5,20 +16,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Julez on 4/6/15.
- */
+
 public class MainFragment extends Fragment
 {
     public static final String TAG = MainFragment.class.getSimpleName();
@@ -79,8 +85,8 @@ public class MainFragment extends Fragment
             "U.S. Virgin Islands" ,
             "Northern Mariana Islands"};
 
-    ArrayList<String> results = new ArrayList<>();    // can dynamically grow
-    String [] results2 = {"1", "2"};                  // limited with 2 slots
+    ArrayList<String> results = new ArrayList<>(); // can dynamically grow
+    String [] results2 = {"1", "2"};              // limited with 2 slots [PERSONAL NOTE, not used]
 
 
     @Override
@@ -94,11 +100,19 @@ public class MainFragment extends Fragment
 
         listView.setAdapter(arrayAdapter);
 
+    /**********************************
+
+     button.setOnClickListener
+
+    **********************************/
 
         button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
+                results.clear();
+                arrayAdapter.clear();
+
                 Pattern pattern = Pattern.compile(edit_text.getText().toString());
                 for (int i = 0; i < STATES.length; i++)
                 {
@@ -107,7 +121,6 @@ public class MainFragment extends Fragment
 
                     if (b)
                     {
-                        Toast.makeText(getActivity(), "It's a match! " + STATES[i], Toast.LENGTH_SHORT).show();
                         results.add(STATES[i]);
                     }
                 }
