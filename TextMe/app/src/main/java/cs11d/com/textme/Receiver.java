@@ -4,17 +4,24 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
-/**
- * Created by Julez on 4/24/15.
- */
+/******************************************
+This is the BroadcastReceiver class that
+ I wasn't able to implement into the app.
+ ******************************************/
+
 public class Receiver extends BroadcastReceiver
 {
     private static final String ACTION = "cs11d.com.textme";
 
+
+    /**********************************
+
+     onReceive()
+
+     **********************************/
     @Override
     public void onReceive(Context context, Intent intent)
     {

@@ -1,7 +1,17 @@
+/*  Julian Eljabali
+    Quiz # 2
+    April 29th 2015 */
+
+/******************************************
+This app is made for angry hateful teenage
+ girls who want to send mean text messages.
+ It is an app version of the Burn Book
+ from the movie Mean Girls (2004)
+ ******************************************/
+
 package cs11d.com.textme;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.Menu;
@@ -9,11 +19,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.telephony.SmsManager;
 
 
-public class TextMeActivity extends ActionBarActivity
+public class TextMeActivity extends FragmentActivity
 {
+
+    /**********************************
+
+     onCreate()
+
+     **********************************/
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,7 +37,13 @@ public class TextMeActivity extends ActionBarActivity
         setContentView(R.layout.activity_text_me);
     }
 
-    public void sendSMS(View v)     //onClick for send button
+    /**********************************
+
+     onClick()
+
+     **********************************/
+
+    public void sendSMS(View v)    //onClick for send button
     {
         final EditText phone = (EditText) findViewById(R.id.phone);
         final EditText msg = (EditText) findViewById(R.id.msg);
@@ -30,16 +51,23 @@ public class TextMeActivity extends ActionBarActivity
         try
         {
             sendSMS(phone.getText().toString(), msg.getText().toString());
-            Toast.makeText(this, "SMS sent", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Burn sent", Toast.LENGTH_LONG).show();
         }
-        catch (Exception e) {Toast.makeText(this, "ERROR! Message not sent", Toast.LENGTH_LONG).show();}
+        catch (Exception e) {Toast.makeText(this, "ERROR! Burn cannot be sent", Toast.LENGTH_LONG).show();}
 
     }
+
+    /**********************************
+
+     sendSMS()
+
+     **********************************/
 
     private void sendSMS(String phone, String msg) throws Exception
     {
         SmsManager sm = SmsManager.getDefault();
-        sm.sendTextMessage(phone, null, msg, null, null); //null1(configures provider),null2 and null3 are both Pending Intents for sending and delivering.
+        sm.sendTextMessage(phone, null, msg, null, null);
+        //null1(configures provider),null2 and null3 are both Pending Intents for sending and delivering.
     }
 
 
